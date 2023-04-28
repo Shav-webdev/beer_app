@@ -1,0 +1,47 @@
+@import "assets/styles/theme-variables";
+
+.cards-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .card {
+    width: 80%;
+    height: 200px;
+    border: 1px solid;
+    margin: 10px auto;
+    @include themify($themes) {
+      border-color: themed('divider');
+    }
+    border-radius: 5px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transition: .3s;
+    @include themify($themes) {
+      color: themed('descriptionTxtColor');
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      padding-top: 40px;
+      img {
+        width: 40px;
+        height: 120px;
+      }
+    }
+    .card-body {
+      display: flex;
+      align-items: flex-start;
+      width: 100%;
+      font-size: 14px;
+      line-height: 1;
+      flex-direction: column;
+      padding-left: 50px;
+    }
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.01);
+    }
+  }
+}
